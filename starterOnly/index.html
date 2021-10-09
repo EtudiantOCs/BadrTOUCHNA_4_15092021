@@ -11,10 +11,11 @@
       rel="stylesheet"
     />
   </head>
+
   <body>
     <div class="topnav" id="myTopnav">
       <div class="header-logo">
-      <img alt="logo" src="Logo.png" width="auto" height="auto" />
+      <img alt="logo" src="Logo.png"/>
     </div>
     <div class="main-navbar">
       
@@ -28,7 +29,7 @@
       </a>
     </div>
     </div>
-  </div>
+  
     <main>
       <div class="hero-section">
         <div class="hero-content">
@@ -52,18 +53,31 @@
         </button>
       </div>
 
-      <div class="bground">
+      <div class="bground"
+      id="submit-state-modal">
         <div class="content">
-          <span class="close"></span>
+          <span class="close" id="close-confirmation"></span>
+          <div class="modal-body">
+            <p>Inscription enregistrée</p>
+            <button class="button btn-ok btn-submit">Ok</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="bground"
+      id="sign-up-modal">
+        <div class="content">
+          <span class="close" id="close-submit" ></span>
           <div class="modal-body">
             <form
+            id="form"
               name="reserve"
               action="index.html"
               method="get"
-              onsubmit="return validate();"
             >
               <div
-                class="formData">
+                class="formData"
+                id="formData-first">
                 <label>Prénom</label><br>
                 <input
                   class="text-control"
@@ -71,52 +85,65 @@
                   id="first"
                   name="first"
                   minlength="2"
+                  pattern="^[a-zA-Z ]*$"
+                  required
                 /><br>
               </div>
               <div
-                class="formData">
+                class="formData"
+                id="formData-last">
                 <label>Nom</label><br>
                 <input
                   class="text-control"
                   type="text"
                   id="last"
                   name="last"
+                  minlength="2"
+                  pattern="^[a-zA-Z ]*$"
+                  required
                 /><br>
               </div>
               <div
-                class="formData">
+                class="formData"
+                id="formData-email">
                 <label>E-mail</label><br>
                 <input
                   class="text-control"
                   type="email"
                   id="email"
                   name="email"
+                  required
                 /><br>
               </div>
               <div
-                class="formData">
+                class="formData"
+                id="formData-birthdate">
                 <label>Date de naissance</label><br>
                 <input
                   class="text-control"
                   type="date"
                   id="birthdate"
                   name="birthdate"
+                  required
                 /><br>
               </div>
               <div
-                class="formData">
+                class="formData"
+                id="formData-quantity">
                 <label>À combien de tournois GameOn avez-vous déjà participé ?</label><br>
-                <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99">
+                <input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99" required>
               </div>
               <p class="text-label">Quelles villes ?</p>
               <div
-                class="formData">
+                class="formData"
+                id="formData-location">
                 <input
                   class="checkbox-input"
                   type="radio"
                   id="location1"
                   name="location"
                   value="New York"
+                  required
                 />
                 <label class="checkbox-label" for="location1">
                   <span class="checkbox-icon"></span>
@@ -180,14 +207,16 @@
               </div>
 
               <div
-                class="formData">
+                class="formData"
+                id="formData-user-condition">
                 <input
                   class="checkbox-input"
                   type="checkbox"
                   id="checkbox1"
                   checked
+                  required
                 />
-                <label class="checkbox2-label" for="checkbox1" required>
+                <label class="checkbox2-label" for="checkbox1" >
                   <span class="checkbox-icon"></span>
                   J'ai lu et accepté les conditions d'utilisation.
                 </label>
@@ -200,10 +229,10 @@
                 <br>
               </div>
               <input
-                class="btn-submit"
+                class="btn-submit button"
                 type="submit"
-                class="button"
                 value="C'est parti"
+                onclick="validate()"
               />
             </form>
           </div>
