@@ -58,7 +58,7 @@ const formFields = [
   {
     inputContainer: document.getElementById("formData-birthdate"),
     input: document.getElementById("birthdate"),
-    errorMessage: "Entrer votre date de naissance",
+    errorMessage: "Entrer votre date de naissance comprise entre 01/01/1910 et 01/01/2010",
   },
   {
     inputContainer: document.getElementById("formData-quantity"),
@@ -73,7 +73,7 @@ const formFields = [
   {
     inputContainer: document.getElementById("formData-user-condition"),
     input: document.getElementById("checkbox1"),
-    errorMessage: "Vous devez acceptez les termes et conditions pour poursuivrer",
+    errorMessage: "Vous devez acceptez les termes et conditions pour poursuivre",
   }
   
 ]
