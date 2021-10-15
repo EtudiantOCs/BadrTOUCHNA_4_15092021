@@ -531,6 +531,13 @@
       font-size: 2.8em;
     }
   }
+  @media screen and (max-width: 280px) {
+
+    .hero-headline {
+      font-size: 2em;
+    }
+  }
+  
   
   @keyframes modalopen {
   from {
