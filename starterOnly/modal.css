@@ -515,6 +515,22 @@
   text-align: center;
   }
   }
+
+  @media screen and (max-width: 480px) {
+    .hero-content {
+    min-width: auto;
+    }
+    .content {
+      margin-top: 17%;
+    }
+
+  }
+  @media screen and (max-width: 390px) {
+
+    .hero-headline {
+      font-size: 2.8em;
+    }
+  }
   
   @keyframes modalopen {
   from {
